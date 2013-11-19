@@ -2,6 +2,8 @@
 
 <ul class="magnets">
   <% @magnets.each do |m| %>
-    <li class="magnet"><%= m.content %></li>
+    <li class="magnet" id="<%= m.id %>"><%= m.content %></li>
   <% end %>
 </ul>
+
+<button id="save-fridge">Save</button>
