@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: linear-gradient(lightsteelblue, steelblue);
+}
+
+.fridge {
+  /* TODO: fridge-ify */
+  float: left;
+  width: 42%;
+  height: 96%;
+  border: 1px solid black;
+  border-radius: 28px;
+  margin-right: 12px;
+  background-color: white;
+}
+
+.magnet {
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 2px;
+  padding: 4px;
+  margin: 4px;
+  background-color: white;
+}
+
+[draggable] {
+  cursor: move;
+}

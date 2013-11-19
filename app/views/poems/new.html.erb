@@ -1,0 +1,7 @@
+<div class="fridge" droppable="true"></div>
+
+<ul class="magnets">
+  <% @magnets.each do |m| %>
+    <li class="magnet" draggable="true"><%= m.content %></li>
+  <% end %>
+</ul>
