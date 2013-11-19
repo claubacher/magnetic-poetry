@@ -20,6 +20,6 @@ words = %w[& dark ing a day ing a delightful is about desire is above did it aft
   change hot paint truth cloud house people up cold how perfect us come I play use comfort I proof vacation could if
   r walk d in rain want]
 
-words.each do |w|
+words.sort.each do |w|
   Magnet.create(content: w)
 end
