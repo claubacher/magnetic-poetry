@@ -1,0 +1,15 @@
+<div id="fridge">
+  <ul class="poem">
+    <% @inclusions.each do |i| %>
+      <li class="magnet" id="<%= i.magnet_id %>"><%= i.magnet.content %></li>
+    <% end %>
+  </ul>
+</div>
+
+<ul class="magnets">
+  <% @magnets.each do |m| %>
+    <li class="magnet" id="<%= m.id %>"><%= m.content %></li>
+  <% end %>
+</ul>
+
+<button id="save-fridge">Save</button>

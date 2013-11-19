@@ -18,6 +18,12 @@ class PoemsController < ApplicationController
     end
   end
 
+  def show
+    poem = Poem.find(params[:id])
+    @inclusions = poem.inclusions
+    @magnets = Magnet.all
+  end
+
   private
 
   def poem_params
