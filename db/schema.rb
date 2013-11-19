@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131119000253) do
+ActiveRecord::Schema.define(version: 20131119075724) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 20131119000253) do
     t.integer  "magnet_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "fridge_top"
+    t.integer  "fridge_left"
   end
 
   add_index "inclusions", ["magnet_id"], name: "index_inclusions_on_magnet_id", using: :btree
