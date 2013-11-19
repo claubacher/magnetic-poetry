@@ -1,3 +1,4 @@
 MagneticPoetry::Application.routes.draw do
-  get '/' => 'poems#new'
+  root to: 'poems#new'
+  resources :poems, :only => [:new, :create, :show, :update]
 end
