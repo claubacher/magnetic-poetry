@@ -1,12 +1,4 @@
 $(function(){
-  // var poem = [];
-
-  // var Magnet = function Magnet(offset, id) {
-  //   this.id = id;
-  //   this.top = offset.top;
-  //   this.left = offset.left;
-  // }
-
   $('.magnet').draggable();
   $('#fridge').droppable({
     accept: '.magnet',
@@ -24,18 +16,10 @@ $(function(){
       } else {
         $('#poem-form').append('<input type="hidden"' +
           ' id="fridgemagnet-' + id + '"' +
-          " name='poem[\"magnet-" + id + "\"']" +
+          " name='poem[magnet-" + id + "']" +
           " type='text' value='" + magnetVal + "'/>")
       }
     }
   });
-
-  // $('#save-fridge').on('click', function() {
-  //   $.ajax({
-  //     url: '/poems',
-  //     type: 'POST',
-  //     data: {poem: JSON.stringify(poem)}
-  //   });
-  // });
 });
 
