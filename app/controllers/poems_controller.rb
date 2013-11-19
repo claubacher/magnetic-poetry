@@ -1,13 +1,15 @@
 class PoemsController < ApplicationController
   def new
+    @poem = Poem.new
     @magnets = Magnet.all
   end
 
   def create
     @poem = Poem.new
-    magnets = JSON.parse(poem_params)
 
-    magnets.each do |m|
+    poem_params.each do |name, magnet|
+      m = JSON.parse(magnet)
+
       @poem.inclusions.build(magnet: Magnet.find(m["id"]),
                              fridge_top: m["top"],
                              fridge_left: m["left"])
