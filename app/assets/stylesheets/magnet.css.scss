@@ -1,26 +1,87 @@
-* {
-  box-sizing: border-box;
-}
-
-html, body {
-  height: 100%;
-}
+* { box-sizing: border-box; }
 
 body {
-  background: linear-gradient(lightsteelblue, steelblue);
+  background: lightsteelblue;
 }
 
+$main: #E4DFDC;
+$darkgray: #897F7D;
+$lightgray: #AEA4A2;
+
+$fridge-width: 360px;
+$fridge-height: 580px;
+
 #fridge {
-  /* TODO: fridge-ify */
-  float: left;
-  width: 42%;
-  height: 96%;
-  border: 1px solid black;
-  border-radius: 28px;
-  margin-right: 12px;
-  background-color: white;
+  height: $fridge-height;
+  width: $fridge-width;
+  border-radius: 10px 10px 0 0;
+  background-color: $main;
   position: relative;
+  box-shadow: 2px 1px $lightgray;
+  float: right;
+  margin-left: 48px;
+  margin-right: 48px;
+  z-index: -2;
 }
+
+#freezer {
+  height: 33%;
+  border-bottom: 3px solid $lightgray;
+}
+
+/*
+ * handles
+ */
+
+#freezer:before, #fridge:before {
+  content: '';
+  position: absolute;
+  background: $lightgray;
+  width: 3%;
+  left: $fridge-width / 20;
+  box-shadow: 2px 1px $darkgray;
+  z-index: -1;
+}
+
+#freezer:before {
+  height: $fridge-height / 3 - 36;
+  top: 16px;
+}
+
+#fridge:before {
+  height: 40%;
+  top: $fridge-height / 3 + 14;
+}
+
+/*
+ * superfluous lighting
+ */
+
+#freezer:after, #fridge:after {
+  content: '';
+  background: transparent;
+  margin: 8px;
+  width: 20%;
+  position: absolute;
+  z-index: -1;
+}
+
+#freezer:after {
+  border-radius: 10px 0;
+  border-top: $fridge-width / 2 - 20 solid rgba(255,255,255,0.1);
+  border-right: $fridge-width / 4 solid transparent;
+  border-bottom: $fridge-width / 2 solid transparent;
+}
+
+#fridge:after {
+  border-top: $fridge-width - 8 solid rgba(255,255,255,0.1);
+  border-right: $fridge-width / 2 solid transparent;
+  border-bottom: $fridge-width / 2 solid transparent;
+}
+
+/*
+ * magnets
+ */
 
 .magnets {
   position: relative;
@@ -39,10 +100,16 @@ body {
   cursor: move;
 }
 
-#save-fridge {
+/*
+ * button
+ */
+
+#poem-form input {
+  display: block;
   position: absolute;
   bottom: 4px;
   right: 4px;
   height: 50px;
   width: 150px;
+  z-index: 10;
 }
