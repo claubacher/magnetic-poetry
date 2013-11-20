@@ -1,11 +1,5 @@
 <div id="fridge"></div>
 
-<ul class="magnets">
-  <% @magnets.each do |m| %>
-    <li class="magnet" id="<%= m.id %>"><%= m.content %></li>
-  <% end %>
-</ul>
+<%= render 'magnets/index' %>
 
-<%= form_for @poem, url: {action: "create"}, html: {id: "poem-form"} do |f| %>
-  <%= f.submit "Save" %>
-<% end %>
+<%= render 'form' %>

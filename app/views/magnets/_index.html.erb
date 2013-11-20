@@ -1,0 +1,10 @@
+<ul class="magnets">
+  <% @magnets.each do |m| %>
+    <% if @poem.magnets.include?(m) %>
+      <% inc = @poem.inclusions.where(magnet: m).first %>
+      <li class="magnet on-fridge" id="<%= m.id %>" data-left="<%= inc.fridge_left %>" data-top="<%= inc.fridge_top %>"><%= m.content %></li>
+    <% else %>
+      <li class="magnet" id="<%= m.id %>"><%= m.content %></li>
+    <% end %>
+  <% end %>
+</ul>
