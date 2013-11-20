@@ -2,14 +2,17 @@
 
 body {
   background: lightsteelblue;
+  margin-bottom: 32px;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 $main: #E4DFDC;
 $darkgray: #897F7D;
 $lightgray: #AEA4A2;
 
-$fridge-width: 360px;
-$fridge-height: 580px;
+$fridge-width: 350px;
+$fridge-height: 566px;
 
 #fridge {
   height: $fridge-height;
@@ -21,7 +24,7 @@ $fridge-height: 580px;
   float: right;
   margin-left: 48px;
   margin-right: 48px;
-  z-index: -2;
+  overflow: hidden;
 }
 
 #freezer {
@@ -40,7 +43,6 @@ $fridge-height: 580px;
   width: 3%;
   left: $fridge-width / 20;
   box-shadow: 2px 1px $darkgray;
-  z-index: -1;
 }
 
 #freezer:before {
@@ -63,7 +65,7 @@ $fridge-height: 580px;
   margin: 8px;
   width: 20%;
   position: absolute;
-  z-index: -1;
+  // z-index: -1;
 }
 
 #freezer:after {
@@ -104,12 +106,36 @@ $fridge-height: 580px;
  * button
  */
 
-#poem-form input {
-  display: block;
+#poem-form {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  height: 48px;
+  margin: 0;
+  padding: 0;
+}
+
+#poem-form input[type=submit] {
+  font-size: 14px;
+  background: steelblue;
+  border: none;
+  border-bottom: 2px solid $lightgray;
+  color: white;
+  display: inline-block;
   position: absolute;
-  bottom: 4px;
-  right: 4px;
-  height: 50px;
-  width: 150px;
-  z-index: 10;
+  right: ($fridge-width + 96) / 2 - 90;
+  height: 24px;
+  width: 180px;
+  margin-top: 6px;
+}
+
+#poem-form input[type=submit]:focus {
+  border-bottom: 2px solid white;
+  outline: none;
+}
+
+#poem-form input[type=submit]:active {
+  -webkit-transform: translateY(2px);
+  transform: translateY(2px);
+  border-bottom: none;
 }
