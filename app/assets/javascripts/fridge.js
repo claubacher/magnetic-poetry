@@ -27,8 +27,8 @@ $(function(){
   $('.on-fridge').each(function() {
     $(this).clone().appendTo($('#fridge')).css({
       position: 'absolute',
-      top: $(this).data('top'),
-      left: $(this).data('left')
+      top: $(this).data('top') - $('#fridge').offset().top,
+      left: $(this).data('left') - $('#fridge').offset().left
     });
     $(this).css('visibility', 'hidden');
   });
