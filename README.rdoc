@@ -1,28 +1,9 @@
-== README
+Drag and drop to add magnets to the fridge. Don't forget to save your poem.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# TODOs:
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+- flash error/success messages
+- select different word lists
+- tweet your poem
+- deleting a magnet
+- fix this: magnets not draggable once on fridge and saved
